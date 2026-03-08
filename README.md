@@ -1,6 +1,7 @@
 # Vizualizator de Sortari (C++ & Qt)
 
 Programul ofera o interfata grafica interactiva pentru a vizualiza, in timp real, modul de functionare a diversilor algoritmi de sortare.
+
 ![Demonstratie Vizualizator](demo.gif)
 
 ## Algoritmi implementati
