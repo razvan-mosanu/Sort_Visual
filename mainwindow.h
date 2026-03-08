@@ -25,7 +25,12 @@ class MainWindow : public QMainWindow
     QPushButton *btnHeapSort;
     QPushButton *btnAmestecare;
     QSlider *speed;
-    int viteza;
+    QPushButton *stop;
+    int viteza = 5;
+    bool oprit = false;
+    int activ1 = -1;
+    int activ2 = -1;
+    int verde = -1;
     void MergeSort(size_t st, size_t dr);
     void Interclasare(size_t st, size_t mij, size_t dr);
     int Aranjare(int st, int dr);
@@ -35,6 +40,8 @@ class MainWindow : public QMainWindow
     void OprireBtn();
     void PornireBtn();
     void make_heap(int n, int i);
+    void OprireAnimatie();
+    void Verde();
 public:
     MainWindow(size_t elemente, const std::vector<int> &v, QWidget *parent = nullptr);
     ~MainWindow();
