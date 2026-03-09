@@ -6,6 +6,8 @@
 #include <vector>
 #include <QPushButton>
 #include <QSlider>
+#include <QSoundEffect>
+#include <QUrl>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,6 +26,7 @@ class MainWindow : public QMainWindow
     QPushButton *btnQuickSortRand;
     QPushButton *btnHeapSort;
     QPushButton *btnAmestecare;
+    QSoundEffect *sunet;
     QSlider *speed;
     QPushButton *stop;
     int viteza = 5;

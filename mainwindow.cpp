@@ -13,6 +13,9 @@ MainWindow::MainWindow(size_t elemente, const std::vector<int> &v, QWidget *pare
     ui->setupUi(this);
     this->elemente = elemente;
     this->v = v;
+    sunet = new QSoundEffect(this);
+    sunet->setVolume(1.0f);
+    sunet->setSource(QUrl::fromLocalFile("D:/QT_STUDENT/Sort_Visual/click.wav"));
     btnBubble = new QPushButton("Bubble Sort", this);
     btnMergeSort = new QPushButton("Merge Sort", this);
     btnCompSort = new QPushButton("Comp Sort", this);
@@ -74,6 +77,7 @@ void MainWindow::Sortarea_prin_comparare()
                 activ1 = i;
                 activ2 = j;
                 std::swap(v[i], v[j]);
+                sunet->play();
                 update();
                 QCoreApplication::processEvents();
                 QThread::msleep(viteza);
@@ -129,6 +133,7 @@ void MainWindow::startBubbleSort()
                 activ2 = j + 1;
                 sortat = false;
                 std::swap(v[j], v[j+1]);
+                sunet->play();
                 update();
                 QCoreApplication::processEvents();
                 QThread::msleep(viteza);
@@ -159,6 +164,7 @@ void MainWindow::Interclasare(size_t st, size_t mij, size_t dr)
         else v[k] = aux2[j++];
         activ1 = k;
         activ2 = -1;
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
@@ -169,6 +175,7 @@ void MainWindow::Interclasare(size_t st, size_t mij, size_t dr)
         v[k++] = aux1[i++];
         activ1 = k;
         activ2 = -1;
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
@@ -178,6 +185,7 @@ void MainWindow::Interclasare(size_t st, size_t mij, size_t dr)
         v[k++] = aux2[j++];
         activ1 = k;
         activ2 = -1;
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
@@ -219,6 +227,7 @@ void MainWindow::pivot_random(int st, int dr)
         activ1 = idx;
         activ2 = dr;
         std::swap(v[idx], v[dr]);
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
@@ -238,6 +247,7 @@ int MainWindow::Aranjare(int st, int dr)
                 activ1 = i;
                 activ2 = j;
                 std::swap(v[i], v[j]);
+                sunet->play();
                 update();
                 QCoreApplication::processEvents();
                 QThread::msleep(viteza);
@@ -248,6 +258,7 @@ int MainWindow::Aranjare(int st, int dr)
     {
         activ1 = i; activ2 = dr;
         std::swap(v[i], v[dr]);
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
@@ -289,6 +300,7 @@ void MainWindow::make_heap(int n, int i)
         activ1 = i;
         activ2 = largest;
         std::swap(v[i], v[largest]);
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
@@ -310,6 +322,7 @@ void MainWindow::heapSort()
         activ1 = 0;
         activ2 = i;
         std::swap(v[0], v[i]);
+        sunet->play();
         update();
         QCoreApplication::processEvents();
         QThread::msleep(viteza);
