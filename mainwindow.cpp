@@ -15,7 +15,7 @@ MainWindow::MainWindow(size_t elemente, const std::vector<int> &v, QWidget *pare
     this->v = v;
     sunet = new QSoundEffect(this);
     sunet->setVolume(1.0f);
-    sunet->setSource(QUrl::fromLocalFile("D:/QT_STUDENT/Sort_Visual/click.wav"));
+    sunet->setSource(QUrl("qrc:/click.wav"));
     btnBubble = new QPushButton("Bubble Sort", this);
     btnMergeSort = new QPushButton("Merge Sort", this);
     btnCompSort = new QPushButton("Comp Sort", this);
